@@ -1,9 +1,3 @@
 {
-  "cleanUrls": true,
-  "rewrites": [
-    { "source": "/", "destination": "/portfolio/index.html" },
-    { "source": "/projects-data.js", "destination": "/portfolio/projects-data.js" },
-    { "source": "/images/(.*)", "destination": "/portfolio/images/$1" },
-    { "source": "/(.*)", "destination": "/portfolio/$1" }
-  ]
+  "outputDirectory": "portfolio"
 }
