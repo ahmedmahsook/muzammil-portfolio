@@ -1,0 +1,567 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Muzammil | Video Editor &amp; Performance Marketer</title>
+<meta name="description" content="Portfolio of Muzammil, video editor and performance marketer creating cinematic content and high-performing creative campaigns.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#f2e8dd;
+    --bg-2:#ead9c9;
+    --ink:#5a4740;
+    --maroon:#7a1a0c;
+    --maroon-2:#a63a1d;
+    --card:rgba(255,255,255,.45);
+    --line:rgba(122,26,12,.14);
+    --shadow:0 10px 30px rgba(90,40,20,.10);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'Poppins',system-ui,sans-serif;
+    color:var(--ink);
+    background:radial-gradient(1200px 700px at 80% -10%, #fbf4ec 0%, transparent 60%),
+               linear-gradient(180deg,var(--bg),var(--bg-2));
+    background-attachment:fixed;
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%;display:block}
+  .wrap{width:min(1100px,92vw);margin-inline:auto}
+
+  /* nav */
+  header{
+    position:fixed;inset:0 0 auto 0;z-index:50;
+    backdrop-filter:blur(14px);
+    background:rgba(242,232,221,.72);
+    border-bottom:1px solid var(--line);
+  }
+  .nav{display:flex;align-items:center;justify-content:space-between;height:72px;width:min(1200px,94vw);margin-inline:auto}
+  .logo{font-weight:700;letter-spacing:.22em;font-size:13px;color:var(--maroon);line-height:1.1}
+  .logo small{display:block;font-weight:400;letter-spacing:.3em;font-size:8px;color:var(--ink);margin-top:3px}
+  .links{display:flex;gap:34px;list-style:none}
+  .links a{font-size:11px;letter-spacing:.2em;text-transform:uppercase;padding:6px 0;border-bottom:1.5px solid transparent;transition:.25s}
+  .links a:hover,.links a.active{color:var(--maroon);border-color:var(--maroon-2)}
+  .btn-ghost{font-size:12px;padding:9px 22px;border:1px solid var(--line);border-radius:6px;transition:.25s;background:rgba(255,255,255,.3)}
+  .btn-ghost:hover{background:var(--maroon);color:#fff;border-color:var(--maroon)}
+  .menu-btn{display:none;background:none;border:0;font-size:24px;color:var(--maroon);cursor:pointer}
+
+  section{padding:110px 0}
+  .eyebrow{display:flex;align-items:center;justify-content:center;gap:14px;font-size:10px;letter-spacing:.35em;text-transform:uppercase;margin-bottom:14px}
+  .eyebrow::before,.eyebrow::after{content:"";width:34px;height:1px;background:var(--line)}
+  h2{font-size:clamp(30px,4.2vw,46px);font-weight:700;color:var(--maroon);line-height:1.15;letter-spacing:-.01em}
+  .center{text-align:center}
+  .divider{height:1px;width:min(560px,70vw);margin:0 auto;background:linear-gradient(90deg,transparent,var(--line),transparent);position:relative}
+  .divider::after{content:"";position:absolute;left:50%;top:-2px;width:5px;height:5px;border-radius:50%;background:var(--maroon-2);transform:translateX(-50%);opacity:.6}
+
+  /* hero */
+  #home{min-height:100vh;display:grid;align-items:center;padding:110px 0 60px}
+  .hero{display:grid;grid-template-columns:1.05fr 1fr;gap:40px;align-items:center;width:min(1200px,94vw);margin-inline:auto}
+  .role{font-size:13px;letter-spacing:.28em;text-transform:uppercase;color:var(--maroon-2);font-weight:500;margin-bottom:10px}
+  h1{font-size:clamp(38px,6vw,68px);font-weight:800;line-height:1.02;color:var(--maroon);letter-spacing:-.02em;text-transform:uppercase}
+  .lead{margin:22px 0 32px;max-width:420px;font-size:15px}
+  .cta{display:flex;gap:14px;flex-wrap:wrap}
+  .btn{display:inline-flex;align-items:center;gap:10px;font-size:13px;font-weight:500;padding:13px 26px;border-radius:6px;border:1px solid transparent;transition:.25s;cursor:pointer;font-family:inherit}
+  .btn-solid{background:var(--maroon);color:#fff}
+  .btn-solid:hover{background:var(--maroon-2);transform:translateY(-2px);box-shadow:var(--shadow)}
+  .btn-line{background:rgba(255,255,255,.35);border-color:var(--line)}
+  .btn-line:hover{border-color:var(--maroon);color:var(--maroon)}
+  .portrait{
+    aspect-ratio:4/4.3;border-radius:22px;overflow:hidden;box-shadow:var(--shadow);
+    background:
+      radial-gradient(60% 50% at 50% 38%, rgba(255,255,255,.9), transparent 70%),
+      linear-gradient(160deg,#fff,#ddd0c4);
+    display:grid;place-items:center;position:relative;
+  }
+  .portrait img{width:100%;height:100%;object-fit:cover;object-position:center top;transition:transform .6s ease}
+  .portrait:hover img{transform:scale(1.03)}
+
+  /* about */
+  .about{display:grid;grid-template-columns:1fr 1.1fr;gap:64px;align-items:center}
+  .about-img{position:relative}
+  .about-img .frame{aspect-ratio:4/4.6;border-radius:18px;overflow:hidden;box-shadow:var(--shadow);
+    background:linear-gradient(160deg,#4a3c35,#1f1815);display:grid;place-items:center;position:relative}
+  .about-img .frame img{width:100%;height:100%;object-fit:cover;object-position:center top}
+  .about-img .frame::after{content:"";position:absolute;inset:auto 0 0 0;height:30%;background:linear-gradient(transparent,var(--bg))}
+  .badge{position:absolute;right:-34px;bottom:34px;background:rgba(250,243,236,.92);padding:16px 22px;border-radius:12px;box-shadow:var(--shadow);text-align:center;z-index:2}
+  .badge b{display:block;font-size:24px;color:var(--maroon)}
+  .badge span{font-size:8px;letter-spacing:.2em;text-transform:uppercase}
+  .about h2{margin:6px 0 20px;font-size:clamp(28px,3.6vw,40px)}
+  .about p{font-size:14px;margin-bottom:16px}
+  blockquote{border-left:2px solid var(--maroon-2);padding:6px 0 6px 16px;color:var(--maroon-2);font-size:14px;margin:22px 0}
+  .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:26px}
+  .stat{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px;text-align:center;box-shadow:var(--shadow);transition:.3s}
+  .stat:hover{transform:translateY(-4px);border-color:var(--maroon-2)}
+  .stat b{display:block;font-size:20px;color:var(--maroon)}
+  .stat span{font-size:9px;letter-spacing:.2em;text-transform:uppercase}
+
+  /* services */
+  .services{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:50px}
+  .service{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:30px 26px;box-shadow:var(--shadow);transition:.3s}
+  .service:hover{transform:translateY(-6px);border-color:var(--maroon-2)}
+  .service i{font-style:normal;display:grid;place-items:center;width:44px;height:44px;border-radius:10px;background:rgba(122,26,12,.08);color:var(--maroon);font-weight:600;margin-bottom:16px}
+  .service h3{font-size:17px;color:var(--maroon);margin-bottom:8px}
+  .service p{font-size:13.5px}
+
+  /* projects */
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:54px;width:min(1100px,94vw);margin-inline:auto}
+  .tile{
+    position:relative;aspect-ratio:16/11;border-radius:16px;overflow:hidden;cursor:pointer;
+    box-shadow:var(--shadow);background:linear-gradient(135deg,#3a1e16,#1b0d09);
+    transition:transform .4s cubic-bezier(.2,.8,.2,1), box-shadow .4s;
+    isolation:isolate;
+  }
+  .tile .bg{
+    position:absolute;inset:0;
+    background:var(--img,none) center/cover no-repeat;
+    transition:transform .6s cubic-bezier(.2,.8,.2,1);
+  }
+  .tile::before{
+    content:"";position:absolute;inset:0;z-index:1;
+    background:linear-gradient(180deg,rgba(0,0,0,.15) 20%,rgba(20,8,4,.82) 100%);
+    transition:.4s;
+  }
+  .tile:hover{transform:translateY(-6px);box-shadow:0 22px 48px rgba(90,40,20,.30)}
+  .tile:hover .bg{transform:scale(1.08)}
+  .tile:hover::before{background:linear-gradient(180deg,rgba(20,8,4,.3) 10%,rgba(20,8,4,.92) 100%)}
+
+  .tile .badge-top{
+    position:absolute;top:12px;left:14px;z-index:2;
+    display:flex;gap:6px;align-items:center;
+  }
+  .tile .badge-tag{
+    font-size:8px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;
+    padding:3px 8px;border-radius:4px;
+    background:rgba(0,0,0,.55);backdrop-filter:blur(6px);color:#fff;
+    border:1px solid rgba(255,255,255,.14);
+  }
+  .tile .num{position:absolute;top:10px;right:14px;z-index:2;font-size:28px;font-weight:700;color:rgba(255,255,255,.18)}
+  
+  /* play button indicator */
+  .tile .play-btn{
+    position:absolute;top:50%;left:50%;transform:translate(-50%,-50%) scale(.85);
+    width:52px;height:52px;border-radius:50%;
+    background:rgba(122,26,12,.92);color:#fff;
+    display:grid;place-items:center;z-index:3;
+    opacity:0;transition:.3s cubic-bezier(.2,.8,.2,1);
+    box-shadow:0 10px 25px rgba(0,0,0,.45);
+    border:1.5px solid rgba(255,255,255,.2);
+  }
+  .tile .play-btn svg{width:18px;height:18px;fill:#fff;margin-left:2px}
+  .tile:hover .play-btn{opacity:1;transform:translate(-50%,-50%) scale(1)}
+
+  .tile .meta{position:absolute;left:16px;right:16px;bottom:14px;z-index:2;color:#fff;transition:.4s}
+  .tile .cat{font-size:8px;letter-spacing:.22em;text-transform:uppercase;color:var(--bg);opacity:.85;font-weight:500}
+  .tile h3{font-size:16px;font-weight:600;margin-top:2px;color:#fff}
+  .tile .more{max-height:0;opacity:0;overflow:hidden;transition:.45s}
+  .tile:hover .more{max-height:90px;opacity:1;margin-top:6px}
+  .tile .more p{font-size:11px;line-height:1.5;opacity:.9}
+  .tags{display:flex;gap:6px;margin-top:8px;flex-wrap:wrap}
+  .tags span{font-size:7.5px;letter-spacing:.14em;text-transform:uppercase;padding:3px 8px;border-radius:20px;background:rgba(255,255,255,.18)}
+
+  /* video modal lightbox */
+  .v-modal{
+    position:fixed;inset:0;z-index:100;
+    background:rgba(18,8,5,.86);
+    backdrop-filter:blur(18px);
+    display:grid;place-items:center;
+    opacity:0;pointer-events:none;
+    transition:opacity .35s ease;
+    padding:20px;
+  }
+  .v-modal.open{
+    opacity:1;pointer-events:auto;
+  }
+  .v-box{
+    position:relative;
+    width:min(940px, 94vw);
+    max-height:92vh;
+    background:#160f0c;
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:0 35px 90px rgba(0,0,0,.7);
+    border:1px solid rgba(255,255,255,.12);
+    display:flex;flex-direction:column;
+    transform:scale(.94);
+    transition:transform .35s cubic-bezier(.2,.8,.2,1);
+  }
+  .v-modal.open .v-box{
+    transform:scale(1);
+  }
+  .v-box.is-vertical{
+    width:min(440px, 92vw);
+  }
+  .v-header{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:14px 20px;
+    background:rgba(30,16,12,.95);
+    border-bottom:1px solid rgba(255,255,255,.08);
+  }
+  .v-title-wrap h4{font-size:15px;color:#fff;font-weight:600;margin:0}
+  .v-title-wrap span{font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.65)}
+  .v-close{
+    background:none;border:none;color:#fff;font-size:26px;cursor:pointer;
+    width:36px;height:36px;border-radius:50%;display:grid;place-items:center;
+    transition:.25s;line-height:1;
+  }
+  .v-close:hover{background:rgba(255,255,255,.18);transform:rotate(90deg)}
+  .v-media{
+    position:relative;background:#000;
+    display:grid;place-items:center;
+    max-height:calc(92vh - 65px);
+    overflow:hidden;
+  }
+  .v-media video{
+    width:100%;height:100%;
+    max-height:calc(92vh - 65px);
+    display:block;
+    background:#000;
+  }
+
+  /* skills */
+  .skills{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:50px;width:min(1000px,92vw);margin-inline:auto}
+  .skill{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px 20px;box-shadow:var(--shadow);transition:.3s}
+  .skill:hover{border-color:var(--maroon-2);transform:translateY(-3px)}
+  .skill .row{display:flex;gap:14px;align-items:center}
+  .skill .ico{width:38px;height:38px;border-radius:8px;display:grid;place-items:center;font-size:12px;font-weight:600;color:var(--maroon);background:rgba(122,26,12,.08)}
+  .skill b{font-size:13.5px;color:var(--maroon);display:block;font-weight:600}
+  .skill small{font-size:10px}
+  .bar{height:2px;background:var(--line);margin-top:16px;border-radius:2px;overflow:hidden}
+  .bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--maroon-2),var(--maroon));transition:width 1.4s cubic-bezier(.2,.8,.2,1)}
+
+  /* contact */
+  .contact-card{width:min(680px,92vw);margin:44px auto 28px;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:26px 30px;box-shadow:var(--shadow);display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .contact-card small{display:block;font-size:8.5px;letter-spacing:.25em;text-transform:uppercase;margin-bottom:6px}
+  .contact-card a,.contact-card span{font-size:14px;color:var(--maroon-2);word-break:break-word}
+  .contact-card a:hover{color:var(--maroon)}
+  .social{display:flex;gap:14px;justify-content:center}
+  .social a{width:44px;height:44px;border-radius:50%;border:1px solid var(--line);display:grid;place-items:center;background:rgba(255,255,255,.4);transition:.25s;color:var(--maroon)}
+  .social a:hover{background:var(--maroon);color:#fff;transform:translateY(-3px)}
+  .social svg{width:18px;height:18px;fill:currentColor}
+  footer{width:min(1000px,92vw);margin:80px auto 30px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-size:10.5px;opacity:.75}
+
+  /* reveal */
+  .rv{opacity:0;transform:translateY(26px);transition:opacity .8s ease, transform .8s cubic-bezier(.2,.8,.2,1)}
+  .rv.in{opacity:1;transform:none}
+
+  @media (max-width:900px){
+    .links{display:none}
+    .menu-btn{display:block}
+    .nav .btn-ghost{display:none}
+    .links.open{display:flex;position:absolute;top:72px;left:0;right:0;flex-direction:column;gap:0;background:rgba(242,232,221,.97);padding:10px 5vw 20px;border-bottom:1px solid var(--line)}
+    .links.open a{display:block;padding:14px 0}
+    .hero,.about{grid-template-columns:1fr}
+    .portrait{order:-1;max-width:420px;margin-inline:auto}
+    #home{padding-top:100px}
+    .badge{right:12px}
+    .services,.skills{grid-template-columns:1fr 1fr}
+    .grid{grid-template-columns:1fr 1fr}
+    .tile .play-btn{opacity:.85;transform:translate(-50%,-50%) scale(1)}
+    .tile .more{max-height:90px;opacity:1;margin-top:6px}
+  }
+  @media (max-width:560px){
+    section{padding:80px 0}
+    .services,.skills,.grid{grid-template-columns:1fr}
+    .contact-card{grid-template-columns:1fr}
+    .stats{gap:8px}
+    .v-box{border-radius:14px}
+    .v-box.is-vertical{width:96vw}
+  }
+  @media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}.rv{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <a href="#home" class="logo">MUZAMMIL<small>PORTFOLIO</small></a>
+    <ul class="links" id="links">
+      <li><a href="#home" class="active">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#projects">Projects</a></li>
+    </ul>
+    <a href="#contact" class="btn-ghost">Contact</a>
+    <button class="menu-btn" id="menu" aria-label="Menu">&#9776;</button>
+  </div>
+</header>
+
+<main>
+<!-- HERO -->
+<section id="home">
+  <div class="hero">
+    <div class="rv">
+      <p class="role">Video Editor &amp; Performance Marketer</p>
+      <h1>Muzammil</h1>
+      <p class="lead">Creating cinematic content and high-performing creative campaigns for brands, businesses, and creators.</p>
+      <div class="cta">
+        <a href="#projects" class="btn btn-solid">View Projects <span>&rarr;</span></a>
+        <a href="#contact" class="btn btn-line">Contact Me</a>
+      </div>
+    </div>
+    <div class="portrait rv">
+      <img src="images/portrait.png" alt="Muzammil - Video Editor">
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="wrap about">
+    <div class="about-img rv">
+      <div class="frame">
+        <img src="images/portrait-alt.png" alt="Muzammil - Behind the camera">
+      </div>
+      <div class="badge"><b>3+</b><span>Years Experience</span></div>
+    </div>
+    <div class="rv">
+      <div class="eyebrow" style="justify-content:flex-start;margin-bottom:0">About Me</div>
+      <h2>Turning Ideas Into Visual Masterpieces</h2>
+      <p>I'm a passionate video editor and performance marketer with a deep understanding of visual storytelling. My work bridges the gap between creative artistry and strategic marketing, delivering content that not only looks stunning but also drives measurable results.</p>
+      <p>From Adobe After Effects to advanced performance analytics, I bring a unique perspective to every project. Whether it's crafting cinematic brand films or optimizing ad campaigns for maximum ROI, I approach each challenge with creativity and precision.</p>
+      <blockquote>Every frame should tell a story, and every story should move your audience to action.</blockquote>
+      <div class="stats">
+        <div class="stat"><b data-count="100" data-suffix="+">0</b><span>Projects</span></div>
+        <div class="stat"><b data-count="20" data-suffix="+">0</b><span>Clients</span></div>
+        <div class="stat"><b data-count="5" data-suffix="M+">0</b><span>Views</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="wrap center">
+    <div class="eyebrow rv">What I Do</div>
+    <h2 class="rv">Services</h2>
+    <div class="services">
+      <div class="service rv"><i>01</i><h3>Video Editing</h3><p>Cinematic edits, reels, brand films and ad creatives with sharp pacing, color and sound design.</p></div>
+      <div class="service rv"><i>02</i><h3>Motion Graphics</h3><p>Titles, transitions and animated overlays that give your content a polished, premium feel.</p></div>
+      <div class="service rv"><i>03</i><h3>Performance Creative</h3><p>Ad creatives built for testing and scale, shaped by data from real campaigns.</p></div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="center">
+    <div class="eyebrow rv">Portfolio</div>
+    <h2 class="rv">Featured Projects</h2>
+  </div>
+  <div class="grid" id="grid"></div>
+</section>
+
+<div class="divider"></div>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="center">
+    <div class="eyebrow rv">Expertise</div>
+    <h2 class="rv">Tools &amp; Skills</h2>
+  </div>
+  <div class="skills" id="skillGrid"></div>
+</section>
+
+<div class="divider"></div>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="center">
+    <div class="eyebrow rv">Get In Touch</div>
+    <h2 class="rv">Let's Create Together</h2>
+    <p class="rv" style="max-width:340px;margin:22px auto 0;font-size:13.5px">Ready to bring your vision to life? I'm always excited to collaborate on projects that push creative boundaries.</p>
+    <div class="contact-card rv" style="text-align:left">
+      <div><small>Email</small><a href="mailto:mohammedmuzamir2005@gmail.com">mohammedmuzamir2005@gmail.com</a></div>
+      <div><small>Phone / WhatsApp</small><a href="tel:+918075143284">+91 8075 143 284</a></div>
+      <div><small>Instagram</small><a href="https://www.instagram.com/mr.mu.z/" target="_blank" rel="noopener noreferrer">@mr.mu.z</a></div>
+    </div>
+    <div class="social rv">
+      <a href="https://www.instagram.com/mr.mu.z/" target="_blank" rel="noopener noreferrer" aria-label="Instagram (@mr.mu.z)"><svg viewBox="0 0 24 24"><path d="M7.6 2h8.8A5.6 5.6 0 0 1 22 7.6v8.8a5.6 5.6 0 0 1-5.6 5.6H7.6A5.6 5.6 0 0 1 2 16.4V7.6A5.6 5.6 0 0 1 7.6 2zm0 1.8A3.8 3.8 0 0 0 3.8 7.6v8.8a3.8 3.8 0 0 0 3.8 3.8h8.8a3.8 3.8 0 0 0 3.8-3.8V7.6a3.8 3.8 0 0 0-3.8-3.8z"/><circle cx="12" cy="12" r="3.2"/><circle cx="17.2" cy="6.8" r="1.1"/></svg></a>
+      <a href="mailto:mohammedmuzamir2005@gmail.com" aria-label="Email"><svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg></a>
+    </div>
+  </div>
+  <footer>
+    <span>&copy; <span id="yr"></span> Muzammil. All rights reserved.</span>
+    <span>Crafted with passion &amp; precision</span>
+  </footer>
+</section>
+</main>
+
+<!-- VIDEO MODAL LIGHTBOX -->
+<div class="v-modal" id="vModal" role="dialog" aria-modal="true" aria-label="Video Player">
+  <div class="v-box" id="vBox">
+    <div class="v-header">
+      <div class="v-title-wrap">
+        <h4 id="vModalTitle">Project</h4>
+        <span id="vModalCategory">Category</span>
+      </div>
+      <button class="v-close" id="vCloseBtn" aria-label="Close video player">&times;</button>
+    </div>
+    <div class="v-media">
+      <video id="vPlayer" controls playsinline preload="metadata">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+  </div>
+</div>
+
+<!-- DATA & APPLICATION SCRIPTS -->
+<script src="projects-data.js"></script>
+<script>
+  const pad = n => String(n).padStart(2,"0");
+
+  // Load projects from external projects-data.js
+  const projects = window.PORTFOLIO_PROJECTS || [];
+
+  const skills = [
+    {k:"Ae", n:"After Effects", v:95},
+    {k:"Pr", n:"Premiere Pro",  v:90},
+    {k:"Fc", n:"Final Cut Pro", v:85},
+    {k:"Lr", n:"Lightroom",     v:88},
+    {k:"Ca", n:"Canva",         v:80},
+    {k:"Da", n:"DaVinci Resolve", v:85}
+  ];
+
+  // Render Projects Grid
+  const gridEl = document.getElementById("grid");
+  gridEl.innerHTML = projects.map((p,i)=>`
+    <article class="tile rv" style="--img:url('${p.thumbnailUrl}')" tabindex="0" data-index="${i}">
+      <div class="bg"></div>
+      <div class="badge-top">
+        <span class="badge-tag">${p.duration || ''}</span>
+        <span class="badge-tag">${p.aspectRatio || ''}</span>
+      </div>
+      <span class="num">${pad(i+1)}</span>
+      <div class="play-btn" aria-label="Play Video">
+        <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+      </div>
+      <div class="meta">
+        <div class="cat">${p.category}</div>
+        <h3>${p.title}</h3>
+        <div class="more">
+          <p>${p.description}</p>
+          <div class="tags">${p.tags.map(t=>`<span>${t}</span>`).join("")}</div>
+        </div>
+      </div>
+    </article>`).join("");
+
+  // Video Modal Logic
+  const vModal = document.getElementById("vModal");
+  const vBox = document.getElementById("vBox");
+  const vPlayer = document.getElementById("vPlayer");
+  const vCloseBtn = document.getElementById("vCloseBtn");
+  const vModalTitle = document.getElementById("vModalTitle");
+  const vModalCategory = document.getElementById("vModalCategory");
+
+  function openVideoModal(project) {
+    if (!project || !project.videoUrl) return;
+    
+    // Set titles
+    vModalTitle.textContent = project.title;
+    vModalCategory.textContent = `${project.category} • ${project.duration || ''}`;
+    
+    // Adjust box aspect ratio class for vertical reels vs widescreen
+    if (project.aspectRatio === "9:16") {
+      vBox.classList.add("is-vertical");
+    } else {
+      vBox.classList.remove("is-vertical");
+    }
+
+    // Configure video source without autoplay
+    vPlayer.src = project.videoUrl;
+    vPlayer.poster = project.thumbnailUrl;
+    vPlayer.autoplay = false;
+    vPlayer.currentTime = 0;
+
+    // Show modal
+    vModal.classList.add("open");
+    document.body.style.overflow = "hidden";
+  }
+
+  function closeVideoModal() {
+    vModal.classList.remove("open");
+    document.body.style.overflow = "";
+    // Pause and release media playback
+    vPlayer.pause();
+    vPlayer.removeAttribute("src");
+    vPlayer.load();
+  }
+
+  // Click & keyboard events for tiles
+  gridEl.addEventListener("click", e => {
+    const tile = e.target.closest(".tile");
+    if (!tile) return;
+    const index = parseInt(tile.dataset.index, 10);
+    openVideoModal(projects[index]);
+  });
+
+  gridEl.addEventListener("keydown", e => {
+    if (e.key === "Enter" || e.key === " ") {
+      const tile = e.target.closest(".tile");
+      if (!tile) return;
+      e.preventDefault();
+      const index = parseInt(tile.dataset.index, 10);
+      openVideoModal(projects[index]);
+    }
+  });
+
+  // Close handlers
+  vCloseBtn.addEventListener("click", closeVideoModal);
+  vModal.addEventListener("click", e => {
+    if (e.target === vModal) closeVideoModal();
+  });
+  window.addEventListener("keydown", e => {
+    if (e.key === "Escape" && vModal.classList.contains("open")) {
+      closeVideoModal();
+    }
+  });
+
+  // Render Skills
+  document.getElementById("skillGrid").innerHTML = skills.map(s=>`
+    <div class="skill rv">
+      <div class="row"><div class="ico">${s.k}</div><div><b>${s.n}</b><small>${s.v}%</small></div></div>
+      <div class="bar"><i data-w="${s.v}"></i></div>
+    </div>`).join("");
+
+  document.getElementById("yr").textContent = new Date().getFullYear();
+
+  // Mobile navigation
+  const links = document.getElementById("links");
+  document.getElementById("menu").onclick = () => links.classList.toggle("open");
+  links.querySelectorAll("a").forEach(a => a.addEventListener("click", () => links.classList.remove("open")));
+
+  // IntersectionObserver for reveal, bars, and counter statistics
+  const io = new IntersectionObserver(es => es.forEach(e => {
+    if(!e.isIntersecting) return;
+    e.target.classList.add("in");
+    e.target.querySelectorAll("[data-w]").forEach(b => b.style.width = b.dataset.w + "%");
+    e.target.querySelectorAll("[data-count]").forEach(el => {
+      const end = +el.dataset.count, suf = el.dataset.suffix || "", t0 = performance.now();
+      const tick = t => { const p = Math.min((t-t0)/1200,1); el.textContent = Math.round(end*(1-Math.pow(1-p,3))) + (p===1?suf:""); if(p<1) requestAnimationFrame(tick); };
+      requestAnimationFrame(tick);
+    });
+    io.unobserve(e.target);
+  }), {threshold:.15});
+  document.querySelectorAll(".rv").forEach((el,i)=>{ el.style.transitionDelay = (i%3)*70+"ms"; io.observe(el); });
+
+  // Scroll spy active nav link
+  const secs = ["home","about","services","projects"].map(id=>document.getElementById(id));
+  const navA = [...links.querySelectorAll("a")];
+  const spy = new IntersectionObserver(es => es.forEach(e => {
+    if(e.isIntersecting) navA.forEach(a => a.classList.toggle("active", a.getAttribute("href")==="#"+e.target.id));
+  }), {rootMargin:"-45% 0px -50% 0px"});
+  secs.forEach(s=>spy.observe(s));
+</script>
+</body>
+</html>

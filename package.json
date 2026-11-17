@@ -1,0 +1,15 @@
+{
+  "name": "muzammil-portfolio",
+  "version": "1.0.0",
+  "description": "Video Editor & Creative Portfolio",
+  "main": "portfolio/index.html",
+  "scripts": {
+    "upload": "node scripts/upload-cloudinary.js",
+    "start": "npx serve portfolio"
+  },
+  "dependencies": {
+    "cloudinary": "^2.5.1",
+    "dotenv": "^16.4.7"
+  }
+}
+
